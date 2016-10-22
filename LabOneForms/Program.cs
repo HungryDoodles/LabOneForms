@@ -19,4 +19,12 @@ namespace LabOneForms
             Application.Run(new MainForm());
         }
     }
+
+    static class Helpers
+    {
+        internal static double Lerp(double a, double b, double alpha)
+        {
+            return a * (1 - alpha) + b * alpha;
+        }
+    }
 }
