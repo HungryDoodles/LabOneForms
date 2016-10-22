@@ -32,6 +32,7 @@
             this.gameStateGroupBox = new System.Windows.Forms.GroupBox();
             this.timeLabel = new System.Windows.Forms.Label();
             this.gameOptionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.currentSpeedMultiplierLabel = new System.Windows.Forms.Label();
             this.currentTimeLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.difficultyMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,6 @@
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentSpeedMultiplierLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
             this.gameStateGroupBox.SuspendLayout();
@@ -65,7 +65,7 @@
             this.gameStateGroupBox.Controls.Add(this.scoreLabel);
             this.gameStateGroupBox.Location = new System.Drawing.Point(12, 12);
             this.gameStateGroupBox.Name = "gameStateGroupBox";
-            this.gameStateGroupBox.Size = new System.Drawing.Size(200, 51);
+            this.gameStateGroupBox.Size = new System.Drawing.Size(385, 51);
             this.gameStateGroupBox.TabIndex = 1;
             this.gameStateGroupBox.TabStop = false;
             this.gameStateGroupBox.Text = "Game State";
@@ -75,7 +75,7 @@
             this.timeLabel.AutoSize = true;
             this.timeLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timeLabel.Location = new System.Drawing.Point(150, 16);
+            this.timeLabel.Location = new System.Drawing.Point(335, 16);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.timeLabel.Size = new System.Drawing.Size(47, 20);
@@ -85,15 +85,26 @@
             // 
             // gameOptionsGroupBox
             // 
+            this.gameOptionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gameOptionsGroupBox.Controls.Add(this.currentSpeedMultiplierLabel);
             this.gameOptionsGroupBox.Controls.Add(this.currentTimeLabel);
             this.gameOptionsGroupBox.Controls.Add(this.menuStrip1);
             this.gameOptionsGroupBox.Location = new System.Drawing.Point(13, 70);
             this.gameOptionsGroupBox.Name = "gameOptionsGroupBox";
-            this.gameOptionsGroupBox.Size = new System.Drawing.Size(200, 74);
+            this.gameOptionsGroupBox.Size = new System.Drawing.Size(384, 74);
             this.gameOptionsGroupBox.TabIndex = 2;
             this.gameOptionsGroupBox.TabStop = false;
             this.gameOptionsGroupBox.Text = "Game Options";
+            // 
+            // currentSpeedMultiplierLabel
+            // 
+            this.currentSpeedMultiplierLabel.AutoSize = true;
+            this.currentSpeedMultiplierLabel.Location = new System.Drawing.Point(6, 53);
+            this.currentSpeedMultiplierLabel.Name = "currentSpeedMultiplierLabel";
+            this.currentSpeedMultiplierLabel.Size = new System.Drawing.Size(81, 13);
+            this.currentSpeedMultiplierLabel.TabIndex = 2;
+            this.currentSpeedMultiplierLabel.Text = "Speed multiplier";
             // 
             // currentTimeLabel
             // 
@@ -110,7 +121,7 @@
             this.difficultyMenuStrip});
             this.menuStrip1.Location = new System.Drawing.Point(3, 16);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(194, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(378, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,39 +139,30 @@
             // easyToolStripMenuItem1
             // 
             this.easyToolStripMenuItem1.Name = "easyToolStripMenuItem1";
-            this.easyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.easyToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.easyToolStripMenuItem1.Text = "Easy";
             this.easyToolStripMenuItem1.Click += new System.EventHandler(this.easyToolStripMenuItem1_Click);
             // 
             // mediumToolStripMenuItem
             // 
             this.mediumToolStripMenuItem.Name = "mediumToolStripMenuItem";
-            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.mediumToolStripMenuItem.Text = "Medium";
             this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
             // 
             // hardToolStripMenuItem
             // 
             this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
-            this.hardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hardToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.hardToolStripMenuItem.Text = "Hard";
             this.hardToolStripMenuItem.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
             // 
             // insaneToolStripMenuItem
             // 
             this.insaneToolStripMenuItem.Name = "insaneToolStripMenuItem";
-            this.insaneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insaneToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.insaneToolStripMenuItem.Text = "Insane";
             this.insaneToolStripMenuItem.Click += new System.EventHandler(this.insaneToolStripMenuItem_Click);
-            // 
-            // currentSpeedMultiplierLabel
-            // 
-            this.currentSpeedMultiplierLabel.AutoSize = true;
-            this.currentSpeedMultiplierLabel.Location = new System.Drawing.Point(6, 53);
-            this.currentSpeedMultiplierLabel.Name = "currentSpeedMultiplierLabel";
-            this.currentSpeedMultiplierLabel.Size = new System.Drawing.Size(81, 13);
-            this.currentSpeedMultiplierLabel.TabIndex = 2;
-            this.currentSpeedMultiplierLabel.Text = "Speed multiplier";
             // 
             // startButton
             // 
@@ -169,7 +171,7 @@
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.startButton.Location = new System.Drawing.Point(13, 151);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(200, 32);
+            this.startButton.Size = new System.Drawing.Size(385, 32);
             this.startButton.TabIndex = 3;
             this.startButton.Text = "Start!";
             this.startButton.UseVisualStyleBackColor = true;
@@ -183,7 +185,7 @@
             this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stopButton.Location = new System.Drawing.Point(13, 190);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(200, 32);
+            this.stopButton.Size = new System.Drawing.Size(385, 32);
             this.stopButton.TabIndex = 4;
             this.stopButton.Text = "Stop!";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -193,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 234);
+            this.ClientSize = new System.Drawing.Size(409, 234);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.gameOptionsGroupBox);

@@ -41,13 +41,13 @@ namespace LabOneForms
 
         private void Tick(object sender, EventArgs e)
         {
-            double timeLeft = gameStopwatch.ElapsedMilliseconds / 1000.0;
-            if (timeLeft <= 0)
+            double timeElapsed = gameStopwatch.ElapsedMilliseconds / 1000.0;
+            if (timeElapsed >= difficulty.time)
             {
-                timeLeft = 0;
+                timeElapsed = difficulty.time;
                 stopButton_Click(null, null);
             }
-            timeLabel.Text = "Time: " + (difficulty.time - timeLeft).ToString("0.00");
+            timeLabel.Text = "Time: " + (difficulty.time - timeElapsed).ToString("0.00");
             scoreLabel.Text = "Score: " + score.ToString();
         }
 
@@ -89,6 +89,8 @@ namespace LabOneForms
             heartbeatTimer.Enabled = true;
             running = true;
             score = 0;
+            playForm.time = 0;
+            playForm.timeDilation = difficulty.speedMultiplier;
             playForm.isAnimating = true;
             startButton.Enabled = false;
             difficultyMenuStrip.Enabled = false;

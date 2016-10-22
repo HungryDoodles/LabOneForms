@@ -12,10 +12,11 @@ namespace LabOneForms
 {
     public partial class PlayForm : Form
     {
-        const double buttonPathMargin = 35.0;
+        const double buttonPathMargin = 50.0;
         const double minFormSize = 100.0;
         const double maxFormSize = 350.0;
-        double time = 0;
+        public double time = 0;
+        public double timeDilation = 1.0;
         public bool isAnimating = false;
         
         public PlayForm()
@@ -35,11 +36,11 @@ namespace LabOneForms
                 new Point(
                     (int)Helpers.Lerp(
                         buttonPathMargin,
-                        Size.Width - buttonPathMargin, 
+                        Size.Width - buttonPathMargin*2, 
                         Math.Cos(time * 1.70) * 0.5 + 0.5),
                     (int)Helpers.Lerp(
                         buttonPathMargin, 
-                        Size.Height - buttonPathMargin, 
+                        Size.Height - buttonPathMargin*2, 
                         Math.Sin(time * 1.53) * 0.5 + 0.5)
                         );
             hardcoreButton.Location = newButtonPoint;
@@ -47,7 +48,7 @@ namespace LabOneForms
 
         private void heartbeatTimer_Tick(object sender, EventArgs e)
         {
-            time += 0.06;
+            time += 0.06 * timeDilation;
             if (isAnimating) AnimateForm(time);
         }
     }
