@@ -34,7 +34,7 @@
             this.gameOptionsGroupBox = new System.Windows.Forms.GroupBox();
             this.currentTimeLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.difficultyMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,23 +107,23 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easyToolStripMenuItem});
+            this.difficultyMenuStrip});
             this.menuStrip1.Location = new System.Drawing.Point(3, 16);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(194, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // easyToolStripMenuItem
+            // difficultyMenuStrip
             // 
-            this.easyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.difficultyMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.easyToolStripMenuItem1,
             this.mediumToolStripMenuItem,
             this.hardToolStripMenuItem,
             this.insaneToolStripMenuItem});
-            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
-            this.easyToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.easyToolStripMenuItem.Text = "Set Difficulty";
+            this.difficultyMenuStrip.Name = "difficultyMenuStrip";
+            this.difficultyMenuStrip.Size = new System.Drawing.Size(86, 20);
+            this.difficultyMenuStrip.Text = "Set Difficulty";
             // 
             // easyToolStripMenuItem1
             // 
@@ -222,7 +222,7 @@
         private System.Windows.Forms.GroupBox gameOptionsGroupBox;
         private System.Windows.Forms.Label currentTimeLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem difficultyMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;

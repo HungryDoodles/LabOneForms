@@ -29,7 +29,7 @@ namespace LabOneForms
             heartbeatTimer.Tick += Tick;
             playForm = new PlayForm();
             playForm.hardcoreButton.Click += AddScore;
-            playForm.ShowDialog();
+            playForm.Show();
             easyToolStripMenuItem1_Click(null, null);
         }
 
@@ -59,19 +59,19 @@ namespace LabOneForms
 
         private void easyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            difficulty.speedMultiplier = 0.5;
+            difficulty.speedMultiplier = 0.2;
             difficulty.time = 60.0;
             UpdateGameSettingsInfo();
         }
         private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            difficulty.speedMultiplier = 1.0;
+            difficulty.speedMultiplier = 0.25;
             difficulty.time = 45.0;
             UpdateGameSettingsInfo();
         }
         private void hardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            difficulty.speedMultiplier = 1.5;
+            difficulty.speedMultiplier = 0.5;
             difficulty.time = 30.0;
             UpdateGameSettingsInfo();
         }
@@ -90,6 +90,9 @@ namespace LabOneForms
             running = true;
             score = 0;
             playForm.isAnimating = true;
+            startButton.Enabled = false;
+            difficultyMenuStrip.Enabled = false;
+            stopButton.Enabled = true;
         }
 
         private void stopButton_Click(object sender, EventArgs e)
@@ -98,6 +101,9 @@ namespace LabOneForms
             heartbeatTimer.Enabled = false;
             running = false;
             playForm.isAnimating = false;
+            startButton.Enabled = true;
+            difficultyMenuStrip.Enabled = true;
+            stopButton.Enabled = false;
         }
 
         
