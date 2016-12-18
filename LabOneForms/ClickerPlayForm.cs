@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LabOneForms
 {
-    public partial class PlayForm : Form
+    public partial class ClickerGamePlayForm : Form, ITickable, IControllable
     {
         const double buttonPathMargin = 50.0;
         const double minFormSize = 100.0;
@@ -19,7 +19,7 @@ namespace LabOneForms
         public double timeDilation = 1.0;
         public bool isAnimating = false;
         
-        public PlayForm()
+        public ClickerGamePlayForm()
         {
             InitializeComponent();
         }
@@ -28,9 +28,9 @@ namespace LabOneForms
         {
             double alpha = (Math.Sin(time) + 1) * 0.5;
             //animate Slider and Form size
-            wavingProgressBar.Value = (int)(alpha * 100);
+            BeginInvoke((Action) delegate { wavingProgressBar.Value = (int)(alpha * 100); });
             double formScale = Helpers.Lerp(minFormSize, maxFormSize, alpha);
-            Size = new Size((int)formScale, (int)formScale);
+            BeginInvoke((Action) delegate { Size = new Size((int)formScale, (int)formScale); });
             //animate button path
             Point newButtonPoint = 
                 new Point(
@@ -43,13 +43,23 @@ namespace LabOneForms
                         Size.Height - buttonPathMargin*2, 
                         Math.Sin(time * 1.53) * 0.5 + 0.5)
                         );
-            hardcoreButton.Location = newButtonPoint;
+            BeginInvoke((Action)delegate { crazyButton.Location = newButtonPoint; });
         }
 
-        private void heartbeatTimer_Tick(object sender, EventArgs e)
+        public void Tick(double deltaTime)
         {
             time += 0.06 * timeDilation;
             if (isAnimating) AnimateForm(time);
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            isAnimating = false;
+        }
+
+        public void RecieveOwningController(Controller controller)
+        {
+            controller.GetTickMachine().AddTickable(this);
         }
     }
 }

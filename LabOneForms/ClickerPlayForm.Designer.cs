@@ -1,6 +1,6 @@
 ﻿namespace LabOneForms
 {
-    partial class PlayForm
+    partial class ClickerGamePlayForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.wavingProgressBar = new System.Windows.Forms.ProgressBar();
-            this.heartbeatTimer = new System.Windows.Forms.Timer(this.components);
-            this.hardcoreButton = new System.Windows.Forms.Button();
+            this.crazyButton = new LabOneForms.CrazyButton();
             this.SuspendLayout();
             // 
             // wavingProgressBar
@@ -44,35 +42,30 @@
             this.wavingProgressBar.Step = 1;
             this.wavingProgressBar.TabIndex = 0;
             // 
-            // heartbeatTimer
+            // crazyButton
             // 
-            this.heartbeatTimer.Enabled = true;
-            this.heartbeatTimer.Interval = 16;
-            this.heartbeatTimer.Tick += new System.EventHandler(this.heartbeatTimer_Tick);
+            this.crazyButton.BlinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(12)))), ((int)(((byte)(8)))));
+            this.crazyButton.ButtonText = "Hit me!";
+            this.crazyButton.Location = new System.Drawing.Point(12, 42);
+            this.crazyButton.Name = "crazyButton";
+            this.crazyButton.NeutralColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.crazyButton.Size = new System.Drawing.Size(48, 48);
+            this.crazyButton.TabIndex = 2;
             // 
-            // hardcoreButton
-            // 
-            this.hardcoreButton.Location = new System.Drawing.Point(13, 53);
-            this.hardcoreButton.Name = "hardcoreButton";
-            this.hardcoreButton.Size = new System.Drawing.Size(61, 23);
-            this.hardcoreButton.TabIndex = 1;
-            this.hardcoreButton.TabStop = false;
-            this.hardcoreButton.Text = "Press me";
-            this.hardcoreButton.UseVisualStyleBackColor = true;
-            // 
-            // PlayForm
+            // ClickerGamePlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.ControlBox = false;
-            this.Controls.Add(this.hardcoreButton);
+            this.Controls.Add(this.crazyButton);
             this.Controls.Add(this.wavingProgressBar);
-            this.Name = "PlayForm";
+            this.Name = "ClickerGamePlayForm";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Click Field";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
@@ -80,8 +73,7 @@
         #endregion
 
         public System.Windows.Forms.ProgressBar wavingProgressBar;
-        private System.Windows.Forms.Timer heartbeatTimer;
-        public System.Windows.Forms.Button hardcoreButton;
+        public CrazyButton crazyButton;
     }
 }
 
